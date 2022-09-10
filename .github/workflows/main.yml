@@ -24,6 +24,6 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           server: ${{ secrets.FTP_SERVER }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './build/*'
+          local_path: './build'
           remote_path: '/var/www/html/test-app'
           args: '-o ConnectTimeout=5'
