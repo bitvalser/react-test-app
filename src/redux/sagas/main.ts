@@ -1,16 +1,17 @@
 import { MainItem } from 'interfaces/main-item.interface';
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { AnyAction } from 'redux';
+import { call, CallEffect, put, PutEffect, takeEvery } from 'redux-saga/effects';
 import { MainActions, successGetDataAction, successGetDetailsAction } from 'redux/actions/main';
 import { fetchData, fetchDetails } from 'services/main';
 
-function* getData(): Generator<any, any, MainItem[]> {
+function* getData(): Generator<CallEffect | PutEffect, void, MainItem[]> {
   try {
     const data = yield call(fetchData);
     yield put(successGetDataAction(data));
   } catch (e) {}
 }
 
-function* getDetails(action: any): Generator<any, any, MainItem> {
+function* getDetails(action: AnyAction): Generator<CallEffect | PutEffect, void, MainItem> {
   try {
     const data = yield call(fetchDetails, action.payload);
     yield put(successGetDetailsAction(data));
