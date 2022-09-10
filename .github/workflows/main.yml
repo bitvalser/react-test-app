@@ -23,7 +23,7 @@ jobs:
         with:
           username: ${{ secrets.FTP_USER }}
           server: ${{ secrets.FTP_SERVER }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local_path: './build/*'
-          remote_path: '/opt/citriswitch-frontend/www'
+          remote_path: '/var/www/html/test-app'
           args: '-o ConnectTimeout=5'
