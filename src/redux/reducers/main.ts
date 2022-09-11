@@ -15,7 +15,9 @@ const initialState: State = {
   detail: null,
 };
 
-export const reducer = handleActions<State>(
+// TODO: research handleActions payload type
+
+export const reducer = handleActions<State, any>(
   {
     [MainActions.GET_DATA]: (state: State) => ({
       ...state,

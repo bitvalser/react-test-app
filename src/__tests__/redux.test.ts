@@ -15,7 +15,7 @@ test('Main getDataAction test', () => {
 
 test('Main successGetDataAction test', () => {
   const mainItemsMock: MainItem[] = [{ id: '1', title: '2' }];
-  expect(reducer(initialState, successGetDataAction(mainItemsMock) as any)).toEqual({
+  expect(reducer(initialState, successGetDataAction(mainItemsMock))).toEqual({
     detail: null,
     list: [{ id: '1', title: '2' }],
     loading: false,
@@ -23,12 +23,12 @@ test('Main successGetDataAction test', () => {
 });
 
 test('Main getDataAction test', () => {
-  expect(reducer(initialState, getDetailsAction('') as any)).toEqual({ detail: null, list: null, loading: true });
+  expect(reducer(initialState, getDetailsAction(''))).toEqual({ detail: null, list: null, loading: true });
 });
 
 test('Main successGetDetailsAction test', () => {
   const detailMock: MainItem = { id: '1', title: '2' };
-  expect(reducer(initialState, successGetDetailsAction(detailMock) as any)).toEqual({
+  expect(reducer(initialState, successGetDetailsAction(detailMock))).toEqual({
     detail: { id: '1', title: '2' },
     list: null,
     loading: false,
