@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const AppRouter: FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/test-app">
       <Routes>
         <Route path={AppRoutes.Main} element={<Main />} />
         <Route path={AppRoutes.Details} element={<Details />} />
