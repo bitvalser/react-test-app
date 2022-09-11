@@ -21,7 +21,6 @@ const Main: FC = () => {
 
   return (
     <div>
-      <h1>Testing build</h1>
       <div>{isListLoading ? 'loading...' : 'Main'}</div>
       {list?.map(({ id, title }) => (
         <div key={id}>
