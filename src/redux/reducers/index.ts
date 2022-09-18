@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import * as main from './main';
+import * as todo from './todo';
 
 export interface AppState {
-  mainState: main.State;
+  todoState: todo.State;
 }
 
 export const rootReducer = combineReducers<AppState>({
-  mainState: main.reducer,
+  todoState: todo.reducer,
 });

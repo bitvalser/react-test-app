@@ -1,4 +1,4 @@
 export enum AppRoutes {
-  Main = '/',
+  Todo = '/',
   Details = '/details/:id',
 }

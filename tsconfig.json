@@ -16,7 +16,15 @@
     "isolatedModules": false,
     "jsx": "react-jsx",
     "experimentalDecorators": true,
-    "typeRoots": ["./@types", "./node_modules/@types"]
+    "typeRoots": ["./@types", "./node_modules/@types"],
+    "paths": {
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@helpers/*": ["helpers/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@redux/*": ["redux/*"],
+      "@services/*": ["services/*"]
+    }
   },
   "include": ["src", "src/custom.d.ts"]
 }
