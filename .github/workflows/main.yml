@@ -19,8 +19,12 @@ jobs:
       - run: npm run test
   sftp-publish:
     runs-on: ubuntu-latest
-    needs: run-tests 
     steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm install
       - run: npm run build
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
